@@ -81,7 +81,17 @@
             padding: 50px;
         }
 
-        button {
+        buttonred {
+        	background-color: #ff0000;
+            border: 2px #ff0000 outset;
+  			padding: 2px 5px;
+  			color: #000000;
+  			text-decoration: none;
+  			font: bold 10px
+        }
+        
+        buttongreen {
+        	background-color: #00ff00;
             display: block;
             margin: 30px 10px;
             padding: 10px;;
@@ -107,18 +117,18 @@
             document.write("<p>This button will also initialize the effects sprite and will play the background sprite (only iOS).</p>")
         }
     </script>
-    <button style="cursor:pointer" onmousedown="$(document).trigger('initAudio'); ">Lets start</button>
+    <buttonred style="cursor:pointer" onmousedown="$(document).trigger('initAudio'); ">Lets start</buttonred>
 </div>
 <div id="loading" style="display: none;">... loading ...</div>
 
 <div id="buttons" style="display: none;">
-    <p>The three buttons below play sounds from the same audio file (sounds/bgndsSprite .mp3 or .ogg)</b></p>
-    <button style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect1')">effect1</button>
-    <button style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect2')">effect2</button>
-    <button id="playSound1" style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect3')">effect3
+
+    <buttonred style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect1')">effect1</buttonred>
+    <buttonred style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect2')">effect2</buttonred>
+    <buttongreen id="playSound1" style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect3')">effect3
         (it loops 3 times)
-    </button>
-    <button style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect4')">effect4</button>
+    </buttongreen>
+    <buttongreen style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect4')">effect4</buttongreen>
     </div>
 
 
