@@ -43,15 +43,23 @@
                 mp3   : "sounds/love.mp3",
                 //example of sprite
                 sprite: {
-                    effect1       : {id: "effect1", start: 0, end: 1, loop: false},
-                    effect2       : {id: "effect2", start: 1, end: 2, loop: false},
-                    effect3       : {id: "effect3", start: 2, end: 3, loop: false},
-                    effect4       : {id: "effect4", start: 3, end: 4, loop: false},
-                    levelIntro    : {id: "levelIntro", start: 20, end: 25, loop: false},
-                    levelCompleted: {id: "levelCompleted", start: 25, end: 30, loop: false},
-                    subLevelLost  : {id: "subLevelLost", start: 35, end: 38.1, loop: false},
-                    subLevelWon   : {id: "subLevelWon", start: 30, end: 31.9, loop: false},
-                    gameWon       : {id: "gameWon", start: 30, end: 31.9, loop: false}
+                    effect01    : {id: "effect01", start: 0, end: 0.9, loop: false},
+                    effect02    : {id: "effect02", start: 1.2, end: 1.9, loop: false},
+                    effect03    : {id: "effect03", start: 2.2, end: 2.9, loop: false},
+                    effect04    : {id: "effect04", start: 3.2, end: 3.9, loop: false},
+                    effect05    : {id: "effect05", start: 4.2, end: 4.9, loop: false},
+                    effect06	: {id: "effect06", start: 5.2, end: 5.9, loop: false},
+                    effect07	: {id: "effect07", start: 6.2, end: 6.9, loop: false},
+                    effect08	: {id: "effect08", start: 7.2, end: 7.9, loop: false},
+                    effect09    : {id: "effect09", start: 8.2, end: 8.9, loop: false},
+                    effect10    : {id: "effect10", start: 9.2, end: 9.9, loop: false},
+                    effect11    : {id: "effect11", start: 10.2, end: 10.9, loop: false},
+                    effect12    : {id: "effect12", start: 11.2, end: 11.9, loop: false},
+                    effect13    : {id: "effect13", start: 12.2, end: 12.9, loop: false},
+                    effect14	: {id: "effect14", start: 13.2, end: 13.9, loop: false},
+                    effect15	: {id: "effect15", start: 14.2, end: 14.9, loop: false},
+                    effect16	: {id: "effect16", start: 15.2, end: 15.9, loop: false}
+                    
                 }
             }
         };
@@ -92,9 +100,29 @@
         
         buttongreen {
         	background-color: #00ff00;
-            display: block;
-            margin: 30px 10px;
-            padding: 10px;;
+            border: 2px #ff0000 outset;
+  			padding: 2px 5px;
+  			color: #000000;
+  			text-decoration: none;
+  			font: bold 10px
+        }
+        
+        buttonblue {
+        	background-color: #0000ff;
+            border: 2px #ff0000 outset;
+  			padding: 2px 5px;
+  			color: #000000;
+  			text-decoration: none;
+  			font: bold 10px
+        }
+
+        buttonwhite {
+        	background-color: #ffffff;
+            border: 2px #ff0000 outset;
+  			padding: 2px 5px;
+  			color: #000000;
+  			text-decoration: none;
+  			font: bold 10px
         }
 
     </style>
@@ -104,8 +132,6 @@
 <a href="https://github.com/pupunzi/jquery.mb.audio"><img
         style="width:100px; position: absolute; top: 20px; right: 20px; border: 0; z-index: 1000"
         src="http://upload.wikimedia.org/wikipedia/commons/b/b3/GitHub.svg" alt="Fork me on GitHub"></a>
-111
-<h2>jquery.mb.audio API: Using the "direct play" and the "sprite" features.</h2>
 
 <p>To invoke the "play" event for a specific sprite:<br>
     <b>$.mbAudio.play(audio, sprite)</b></p>
@@ -123,12 +149,25 @@
 
 <div id="buttons" style="display: none;">
 
-    <buttonred style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect1')">effect1</buttonred>
-    <buttonred style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect2')">effect2</buttonred>
-    <buttongreen id="playSound1" style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect3')">effect3
-        (it loops 3 times)
-    </buttongreen>
-    <buttongreen style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect4')">effect4</buttongreen>
+    <buttonred style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect01')">effect1</buttonred>
+    <buttonred style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect02')">effect2</buttonred>
+    <buttonred style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect03')">effect3</buttonred>
+    <buttonred style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect04')">effect4</buttonred><br>
+      
+     <buttongreen style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect05')">pick me</buttongreen>
+    <buttongreen style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect06')">no, me</buttongreen>
+    <buttongreen style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect07')">or me</buttongreen>
+    <buttongreen style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect08')">maybe me</buttongreen><br>
+    
+    <buttonblue style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect09')">or this</buttonblue>
+    <buttonblue style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect10')">perhaps this</buttonblue>
+    <buttonblue style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect11')">maybe this</buttonblue>
+    <buttonblue style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect12')">possibly this</buttonblue><br>
+   
+    <buttonwhite style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect13')">or that</buttonwhite>
+    <buttonwhite style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect14')">it's that</buttonwhite>
+    <buttonwhite style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect15')">for that</buttonwhite>
+    <buttonwhite style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect16')">maybe that</buttonwhite>
     </div>
 
 
