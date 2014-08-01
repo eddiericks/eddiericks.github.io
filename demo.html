@@ -40,13 +40,13 @@
             effectSprite: {
                 id    : "effectSprite",
                 ogg   : "sounds/effectsSprite.ogg",
-                mp3   : "sounds/effectsSprite1.mp3",
+                mp3   : "sounds/love.mp3",
                 //example of sprite
                 sprite: {
-                    streak        : {id: "streak", start: 3, end: 4, loop: false},
-                    great         : {id: "great", start: 0, end: 8, loop: 3},
-                    divine        : {id: "divine", start: 10, end: 11.6, loop: false},
-                    wow           : {id: "wow", start: 15, end: 20, loop: false},
+                    effect1       : {id: "effect1", start: 0, end: 1, loop: 3},
+                    effect2       : {id: "effect2", start: 1, end: 2, loop: 3},
+                    effect3       : {id: "effect3", start: 2, end: 3, loop: 3},
+                    effect4       : {id: "effect4", start: 3, end: 4, loop: 3},
                     levelIntro    : {id: "levelIntro", start: 20, end: 25, loop: false},
                     levelCompleted: {id: "levelCompleted", start: 25, end: 30, loop: false},
                     subLevelLost  : {id: "subLevelLost", start: 35, end: 38.1, loop: false},
@@ -113,11 +113,12 @@
 
 <div id="buttons" style="display: none;">
     <p>The three buttons below play sounds from the same audio file (sounds/bgndsSprite .mp3 or .ogg)</b></p>
-    <button style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'great')">play effect 1</button>
-    <button style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'wow')">play effect 2</button>
-    <button id="playSound1" style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'streak')">play effect 3
+    <button style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect1')">effect1</button>
+    <button style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect2')">effect2</button>
+    <button id="playSound1" style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect3')">effect3
         (it loops 3 times)
     </button>
+    <button style="cursor:pointer" onmousedown="$.mbAudio.play('effectSprite', 'effect4')">effect4</button>
     </div>
 
 
