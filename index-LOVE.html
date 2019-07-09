@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lovely Soundboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="keys">
+    <div data-key="1" class="key red">
+      <kbd>1</kbd>
+    </div>
+    <div data-key="2" class="key red">
+      <kbd>2</kbd>
+    </div>
+    <div data-key="3" class="key red">
+      <kbd>3</kbd>
+    </div>
+    <div data-key="4" class="key red">
+      <kbd>4</kbd>
+    </div>
+    <div data-key="5" class="key red">
+      <kbd>5</kbd>
+    </div>
+    <div data-key="6" class="key red">
+      <kbd>6</kbd>
+    </div>
+    <div data-key="7" class="key red">
+      <kbd>7</kbd>
+    </div>
+    <div data-key="8" class="key red">
+      <kbd>8</kbd>
+    </div>
+  </div>
+
+  <div class="keys">
+    <div data-key="q" class="key green">
+      <kbd>Q</kbd>
+    </div>
+    <div data-key="w" class="key green">
+      <kbd>W</kbd>
+    </div>
+    <div data-key="e" class="key green">
+      <kbd>E</kbd>
+    </div>
+    <div data-key="r" class="key green">
+      <kbd>R</kbd>
+    </div>
+    <div data-key="t" class="key green">
+      <kbd>T</kbd>
+    </div>
+    <div data-key="y" class="key green">
+      <kbd>Y</kbd>
+    </div>
+    <div data-key="u" class="key green">
+      <kbd>U</kbd>
+    </div>
+    <div data-key="i" class="key green">
+      <kbd>I</kbd>
+    </div>
+  </div>
+
+  <div class="keys">
+    <div data-key="a" class="key blue">
+      <kbd>A</kbd>
+    </div>
+    <div data-key="s" class="key blue">
+      <kbd>S</kbd>
+    </div>
+    <div data-key="d" class="key blue">
+      <kbd>D</kbd>
+    </div>
+    <div data-key="f" class="key blue">
+      <kbd>F</kbd>
+    </div>
+    <div data-key="g" class="key blue">
+      <kbd>G</kbd>
+    </div>
+    <div data-key="h" class="key blue">
+      <kbd>H</kbd>
+    </div>
+    <div data-key="j" class="key blue">
+      <kbd>J</kbd>
+    </div>
+    <div data-key="k" class="key blue">
+      <kbd>K</kbd>
+    </div>
+  </div>
+
+  <div class="keys">
+    <div data-key="z" class="key white">
+      <kbd>Z</kbd>
+    </div>
+    <div data-key="x" class="key white">
+      <kbd>X</kbd>
+    </div>
+    <div data-key="c" class="key white">
+      <kbd>C</kbd>
+    </div>
+    <div data-key="v" class="key white">
+      <kbd>V</kbd>
+    </div>
+    <div data-key="b" class="key white">
+      <kbd>B</kbd>
+    </div>
+    <div data-key="n" class="key white">
+      <kbd>N</kbd>
+    </div>
+    <div data-key="m" class="key white">
+      <kbd>M</kbd>
+    </div>
+    <div data-key="," class="key white">
+      <kbd>,</kbd>
+    </div>
+  </div>
+
+  <audio data-key="1" src="sounds/love_0.wav"></audio>
+  <audio data-key="2" src="sounds/love_1.wav"></audio>
+  <audio data-key="3" src="sounds/love_2.wav"></audio>
+  <audio data-key="4" src="sounds/love_3.wav"></audio>
+  <audio data-key="5" src="sounds/love_4.wav"></audio>
+  <audio data-key="6" src="sounds/love_5.wav"></audio>
+  <audio data-key="7" src="sounds/love_6.wav"></audio>
+  <audio data-key="8" src="sounds/love_7.wav"></audio>
+
+  <audio data-key="q" src="sounds/love_8.wav"></audio>
+  <audio data-key="w" src="sounds/love_9.wav"></audio>
+  <audio data-key="e" src="sounds/love_10.wav"></audio>
+  <audio data-key="r" src="sounds/love_11.wav"></audio>
+  <audio data-key="t" src="sounds/love_12.wav"></audio>
+  <audio data-key="y" src="sounds/love_13.wav"></audio>
+  <audio data-key="u" src="sounds/love_14.wav"></audio>
+  <audio data-key="i" src="sounds/love_15.wav"></audio>
+
+  <audio data-key="a" src="sounds/love_16.wav"></audio>
+  <audio data-key="s" src="sounds/love_17.wav"></audio>
+  <audio data-key="d" src="sounds/love_18.wav"></audio>
+  <audio data-key="f" src="sounds/love_19.wav"></audio>
+  <audio data-key="g" src="sounds/love_20.wav"></audio>
+  <audio data-key="h" src="sounds/love_21.wav"></audio>
+  <audio data-key="j" src="sounds/love_22.wav"></audio>
+  <audio data-key="k" src="sounds/love_23.wav"></audio>
+
+  <audio data-key="z" src="sounds/love_24.wav"></audio>
+  <audio data-key="x" src="sounds/love_25.wav"></audio>
+  <audio data-key="c" src="sounds/love_26.wav"></audio>
+  <audio data-key="v" src="sounds/love_27.wav"></audio>
+  <audio data-key="b" src="sounds/love_28.wav"></audio>
+  <audio data-key="n" src="sounds/love_29.wav"></audio>
+  <audio data-key="m" src="sounds/love_30.wav"></audio>
+  <audio data-key="," src="sounds/love_31.wav"></audio>
+
+<script>
+  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  }
+
+  function clickSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.target.parentElement.dataset['key']}"]`);
+    const key = document.querySelector(`div[data-key="${e.target.parentElement.dataset['key']}"]`);
+    if (!audio) return;
+
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+  }
+
+  function keySound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.key}"]`);
+    const key = document.querySelector(`div[data-key="${e.key}"]`);
+    if (!audio) return;
+
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+  }
+
+  const keys = Array.from(document.querySelectorAll('.key'));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  keys.forEach(key => key.addEventListener('mousedown', clickSound));
+  window.addEventListener('keydown', keySound);
+</script>
+
+
+</body>
+</html>
