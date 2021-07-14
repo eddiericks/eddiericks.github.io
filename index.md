@@ -7,6 +7,7 @@ group: index
 ### Examples
 
 - [Soundboard Example](/index-LOVE.html)
+- [NEW Soundboard Example](/index-RBS.html)
 - [gif for board](/jy.gif)
 
 ### [TODO](/TODO.md)
