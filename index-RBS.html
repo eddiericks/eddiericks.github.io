@@ -305,7 +305,7 @@ var noteValues = {
     'C8': 4186.01
 }
 
-  var context = new (window.AudioContext || window.webkitAudioContext)();
+  var context = new (window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.oAudioContext || window.msAudioContext)();
   var o = context.createOscillator();
   o.start(0);
 
