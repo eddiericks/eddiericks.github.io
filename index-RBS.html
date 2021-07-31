@@ -305,11 +305,6 @@ var noteValues = {
     'C8': 4186.01
 }
 
-  function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
-  }
-
   var context = new AudioContext();
   var o = context.createOscillator();
   o.start(0);
@@ -322,7 +317,7 @@ var noteValues = {
 
 
   function playSound(e) {
-
+    e.target.classList.add('playing');
     var noteName = e.target.innerHTML;
     var frequency = noteValues[noteName];
     if (!frequency) return;
@@ -332,11 +327,12 @@ var noteValues = {
 
   function stopSound(e) {
     g.gain.value = 0;
+    e.target.classList.remove('playing');
   }
 
   const keys = Array.from(document.querySelectorAll('.key'));
-  keys.forEach(key => key.addEventListener('mousedown', playSound));
-  keys.forEach(key => key.addEventListener('mouseup', stopSound));
+  keys.forEach(key => key.addEventListener('pointerdown', playSound));
+  keys.forEach(key => key.addEventListener('pointerup', stopSound));
 </script>
 
 
