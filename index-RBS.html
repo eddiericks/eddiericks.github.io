@@ -335,8 +335,8 @@ var noteValues = {
   }
 
   const keys = Array.from(document.querySelectorAll('.key'));
-  keys.forEach(key => key.addEventListener('touchstart', playSound));
-  keys.forEach(key => key.addEventListener('touchend', stopSound));
+  keys.forEach(key => key.addEventListener('mousedown', playSound));
+  keys.forEach(key => key.addEventListener('mouseup', stopSound));
 </script>
 
 
